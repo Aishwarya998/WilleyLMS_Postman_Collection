@@ -1,0 +1,640 @@
+{
+	"info": {
+		"_postman_id": "e5d688d7-62c4-4ab4-a326-b98670d97bfe",
+		"name": "Ellucian_WillyLMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23996519"
+	},
+	"item": [
+		{
+			"name": "endpoint",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var token = pm.response.text();\r",
+							"pm.collectionVariables.set(\"bearertoken\", token);\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "apikey"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 3083bb11-5241-4cda-99aa-3a2bb74119c6",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://integrate.elluciancloud.com/auth",
+					"protocol": "https",
+					"host": [
+						"integrate",
+						"elluciancloud",
+						"com"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "term-codes",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearertoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://integrate.elluciancloud.com/api/term-codes",
+					"protocol": "https",
+					"host": [
+						"integrate",
+						"elluciancloud",
+						"com"
+					],
+					"path": [
+						"api",
+						"term-codes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sections-inquiry",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearertoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://integrate.elluciancloud.com/api/sections-inquiry",
+					"protocol": "https",
+					"host": [
+						"integrate",
+						"elluciancloud",
+						"com"
+					],
+					"path": [
+						"api",
+						"sections-inquiry"
+					],
+					"query": [
+						{
+							"key": "acyrCode",
+							"value": "2021",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "basic-course-informations",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearertoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://integrate.elluciancloud.com/api/basic-course-informations?subjCode=1124&termCodeEff=001010&crseNumb=CR123",
+					"protocol": "https",
+					"host": [
+						"integrate",
+						"elluciancloud",
+						"com"
+					],
+					"path": [
+						"api",
+						"basic-course-informations"
+					],
+					"query": [
+						{
+							"key": "subjCode",
+							"value": "1124"
+						},
+						{
+							"key": "termCodeEff",
+							"value": "001010"
+						},
+						{
+							"key": "crseNumb",
+							"value": "CR123"
+						},
+						{
+							"key": "acyrCode",
+							"value": "2021",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "college-codes",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearertoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://integrate.elluciancloud.com/api/college-codes",
+					"protocol": "https",
+					"host": [
+						"integrate",
+						"elluciancloud",
+						"com"
+					],
+					"path": [
+						"api",
+						"college-codes"
+					],
+					"query": [
+						{
+							"key": "acyrCode",
+							"value": "2021",
+							"disabled": true
+						},
+						{
+							"key": "subjCode",
+							"value": "1124",
+							"disabled": true
+						},
+						{
+							"key": "termCode",
+							"value": "001010",
+							"disabled": true
+						},
+						{
+							"key": "crseNumb",
+							"value": "CR123",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "subject-codes",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearertoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://integrate.elluciancloud.com/api/subject-codes",
+					"protocol": "https",
+					"host": [
+						"integrate",
+						"elluciancloud",
+						"com"
+					],
+					"path": [
+						"api",
+						"subject-codes"
+					],
+					"query": [
+						{
+							"key": "acyrCode",
+							"value": "2021",
+							"disabled": true
+						},
+						{
+							"key": "subjCode",
+							"value": "1124",
+							"disabled": true
+						},
+						{
+							"key": "termCode",
+							"value": "001010",
+							"disabled": true
+						},
+						{
+							"key": "crseNumb",
+							"value": "CR123",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "general-person-identification",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearertoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://integrate.elluciancloud.com/api/general-person-identification?id=1",
+					"protocol": "https",
+					"host": [
+						"integrate",
+						"elluciancloud",
+						"com"
+					],
+					"path": [
+						"api",
+						"general-person-identification"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "general-student-learner-and-curricula",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearertoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://integrate.elluciancloud.com/api/general-student-learner-and-curricula?spridenId=1",
+					"protocol": "https",
+					"host": [
+						"integrate",
+						"elluciancloud",
+						"com"
+					],
+					"path": [
+						"api",
+						"general-student-learner-and-curricula"
+					],
+					"query": [
+						{
+							"key": "acyrCode",
+							"value": "2021",
+							"disabled": true
+						},
+						{
+							"key": "subjCode",
+							"value": "1124",
+							"disabled": true
+						},
+						{
+							"key": "termCode",
+							"value": "001010",
+							"disabled": true
+						},
+						{
+							"key": "crseNumb",
+							"value": "CR123",
+							"disabled": true
+						},
+						{
+							"key": "spridenId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "student-course-fee-assessment-query",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearertoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://integrate.elluciancloud.com/api/student-course-fee-assessment-query",
+					"protocol": "https",
+					"host": [
+						"integrate",
+						"elluciancloud",
+						"com"
+					],
+					"path": [
+						"api",
+						"student-course-fee-assessment-query"
+					],
+					"query": [
+						{
+							"key": "acyrCode",
+							"value": "2021",
+							"disabled": true
+						},
+						{
+							"key": "subjCode",
+							"value": "1124",
+							"disabled": true
+						},
+						{
+							"key": "termCode",
+							"value": "001010",
+							"disabled": true
+						},
+						{
+							"key": "crseNumb",
+							"value": "CR123",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "term-control-part-of-term-and-web-registration-controls",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearertoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://integrate.elluciancloud.com/api/term-control-part-of-term-and-web-registration-controls?xxxxxxxTermCode=200110",
+					"protocol": "https",
+					"host": [
+						"integrate",
+						"elluciancloud",
+						"com"
+					],
+					"path": [
+						"api",
+						"term-control-part-of-term-and-web-registration-controls"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "002",
+							"disabled": true
+						},
+						{
+							"key": "xxxxxxxTermCode",
+							"value": "200110"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "class-attendance-roster",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearertoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://integrate.elluciancloud.com/api/class-attendance-roster?ssbsectTermCodet=200110&ssbsectCrnt=10021",
+					"protocol": "https",
+					"host": [
+						"integrate",
+						"elluciancloud",
+						"com"
+					],
+					"path": [
+						"api",
+						"class-attendance-roster"
+					],
+					"query": [
+						{
+							"key": "ssbsectTermCodet",
+							"value": "200110"
+						},
+						{
+							"key": "ssbsectCrnt",
+							"value": "10021"
+						},
+						{
+							"key": "code",
+							"value": "002",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "bearertoken",
+			"value": ""
+		}
+	]
+}
